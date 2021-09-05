@@ -1,0 +1,2 @@
+class DetallePrestamo < ApplicationRecord
+end
