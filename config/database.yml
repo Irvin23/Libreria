@@ -12,3 +12,10 @@ development:
   database: dekhma1tpunv0d		
   username: xomoetvzjhodiv
   password: a4ab94f0cc4a1f3b14ce4820f8fe9c12711f98eda3290658b3d864dc51e07c04
+  
+production:
+  <<: *default
+  host: ec2-34-193-112-164.compute-1.amazonaws.com
+  database: dekhma1tpunv0d		
+  username: xomoetvzjhodiv
+  password: a4ab94f0cc4a1f3b14ce4820f8fe9c12711f98eda3290658b3d864dc51e07c04
