@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_05_162847) do
+ActiveRecord::Schema.define(version: 2021_09_06_214641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(version: 2021_09_05_162847) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "inventarios", force: :cascade do |t|
+    t.integer "cantidad"
+    t.bigint "libro_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["libro_id"], name: "index_inventarios_on_libro_id"
   end
 
   create_table "libros", force: :cascade do |t|
@@ -65,5 +73,6 @@ ActiveRecord::Schema.define(version: 2021_09_05_162847) do
     t.index ["rol_id"], name: "index_users_on_rol_id"
   end
 
+  add_foreign_key "inventarios", "libros"
   add_foreign_key "users", "rols"
 end
